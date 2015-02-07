@@ -26,7 +26,7 @@ Installation instructions
 2. Clone git repository of your newly created application, and then merge it with 
 	this repository:
 
-		git remote add openshift-nexus https://github.com/mirogula/openshift-nexus.git
+		git remote add openshift-nexus https://github.com/trifonnt/openshift-nexus.git
 		git pull -s recursive -X theirs openshift-nexus master 
 		git push
 
