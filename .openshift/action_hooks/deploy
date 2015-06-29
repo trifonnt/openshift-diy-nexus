@@ -59,7 +59,7 @@ then
 	# as default application;
 	# example url to match: http://www.sonatype.org/downloads/nexus-2.8.0.war
 	nexus_war_url="http://www.sonatype.org/downloads/nexus-$NEXUS_VER.war"
-	wget $nexus_war_url
+	curl $nexus_war_url -o nexus-$NEXUS_VER.war
 	mkdir ${OPENSHIFT_DATA_DIR}tomcat/webapps/ROOT/
 	cd ${OPENSHIFT_DATA_DIR}tomcat/webapps/ROOT/
 	jar xvf ${OPENSHIFT_DATA_DIR}deployment-tmp/nexus-$NEXUS_VER.war
