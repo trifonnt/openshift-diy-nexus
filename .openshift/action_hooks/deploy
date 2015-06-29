@@ -80,6 +80,6 @@ then
 			| ed -s ${OPENSHIFT_DATA_DIR}tomcat/webapps/ROOT/WEB-INF/web.xml
 
 
-	cd ~/
+	cd ~
 	rm -rf ${OPENSHIFT_DATA_DIR}deployment-tmp
 fi
