@@ -39,7 +39,7 @@ then
 	tomcat_url="http://www.us.apache.org/dist/tomcat/tomcat-$major_ver/v$TOMCAT_VER/bin/apache-tomcat-$TOMCAT_VER.tar.gz"	
 	
 	# download tomcat, and set it up
-	wget $tomcat_url		
+	curl $tomcat_url		
 	tar -zxvf apache-tomcat-$TOMCAT_VER.tar.gz
 	cp -rf apache-tomcat-$TOMCAT_VER/ ${OPENSHIFT_DATA_DIR}tomcat
 
