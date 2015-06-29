@@ -2,4 +2,17 @@
 # The logic to start up your application should be put in this
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
-nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |& /usr/bin/logshifter -tag diy &
+
+
+set -x
+
+JAVA_PREFS_DIR_CONFIG="-Djava.util.prefs.userRoot=$OPENSHIFT_DATA_DIR/java.prefs"
+JAVA_XMX_CONFIG="-Xmx384M"
+export CATALINA_OPTS="$JAVA_OPTS $JAVA_PREFS_DIR_CONFIG $JAVA_XMX_CONFIG"
+export NEXUS_WORK=$OPENSHIFT_DATA_DIR/sonatype-work/nexus
+
+cd $OPENSHIFT_DATA_DIR/tomcat/
+pattern='s/OPENSHIFT_DIY_IP/'$OPENSHIFT_DIY_IP'/g;s/OPENSHIFT_APP_DNS/'$OPENSHIFT_APP_DNS'/g'
+sed $pattern conf/server.xml.template > conf/server.xml
+
+bin/startup.sh
