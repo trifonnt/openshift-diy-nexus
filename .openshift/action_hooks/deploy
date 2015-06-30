@@ -11,8 +11,8 @@ set -x
 # version of tomcat you want to use
 TOMCAT_VER="7.0.62"
 
-# version of nexus you want to use. old: 2.11.0
-NEXUS_VER="2.11.1-01"
+# version of nexus you want to use. old: 2.11.1-01, 2.11.0
+NEXUS_VER="2.11.3-01"
 
 
 
