@@ -60,7 +60,7 @@ then
 	# example url to match: http://www.sonatype.org/downloads/nexus-2.8.0.war
 	
 	#nexus_war_url="http://www.sonatype.org/downloads/nexus-$NEXUS_VER.war"
-	nexus_war_url="https://sonatype-download.global.ssl.fastly.net/nexus/oss/nexus-$NEXUS_VER.war"
+	nexus_war_url="http://sonatype-download.global.ssl.fastly.net/nexus/oss/nexus-$NEXUS_VER.war"
 	curl $nexus_war_url -o nexus-$NEXUS_VER.war
 	mkdir ${OPENSHIFT_DATA_DIR}tomcat/webapps/ROOT/
 	cd ${OPENSHIFT_DATA_DIR}tomcat/webapps/ROOT/
